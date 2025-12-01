@@ -1,0 +1,24 @@
+[package]
+name = "fluid_simulation"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Окно + события (кроссплатформенно: Linux/Win/Mac)
+winit = { version = "0.30", features = ["wayland", "x11"] }
+
+# Работа с GPU (Vulkan/Metal/DX12/WebGPU)
+wgpu = "*"
+
+# Для удобного ожидания async при инициализации GPU
+pollster = "*"
+
+# Для безопасного преобразования данных в u8 срезы (буферы)
+bytemuck = { version = "*", features = ["derive"] }
+
+anyhow = "1.0"
+
+env_logger = "*"
+log = "0.4.27"
+cgmath = "0.18.0"
+rand = "*"
